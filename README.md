@@ -3,7 +3,7 @@
 Jeu multijoueur dans le navigateur (2 à 5 joueurs) : garde ta souris dans le cercle qui rétrécit toutes les 10 secondes, évite les lasers et, à partir du 3e rétrécissement, les bombes qui apparaissent sous ta souris.
 
 ## Comment ça marche
-
+ 
 - Site 100 % statique : `index.html`, `style.css`, `game.js`.
 - Le multijoueur passe par [PeerJS](https://peerjs.com/) (WebRTC). Les navigateurs se parlent directement ; le serveur gratuit de PeerJS sert seulement à les mettre en relation. Pas besoin d'un serveur à soi.
 - Le créateur du salon est l'**hôte** : son navigateur fait tourner la partie et décide qui meurt. Il doit garder l'onglet du jeu au premier plan.
