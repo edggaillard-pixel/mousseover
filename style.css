@@ -1,0 +1,102 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #0d0f14;
+  color: #e8ecf3;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#game { position: fixed; inset: 0; display: block; }
+#game.hide-cursor { cursor: none; }
+
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(8, 10, 14, 0.65);
+}
+.hidden { display: none !important; }
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  background: #161a24;
+  border: 1px solid #262c3a;
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+h1 { margin: 0 0 8px; font-size: 34px; letter-spacing: 1px; }
+h1 span { color: #ff3b3b; }
+h2 { margin: 0; font-size: 24px; }
+p { margin: 0; }
+
+input {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid #2d3445;
+  background: #0f121a;
+  color: inherit;
+  font-size: 16px;
+  outline: none;
+}
+input:focus { border-color: #ff3b3b; }
+
+button {
+  padding: 11px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #ff3b3b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
+button:disabled { opacity: 0.4; cursor: not-allowed; filter: none; }
+button.secondary { background: #262c3a; }
+
+.row { display: flex; gap: 8px; }
+.row input {
+  flex: 1;
+  min-width: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.error { color: #ff6b6b; font-size: 14px; min-height: 1.2em; }
+.hint { color: #8a93a6; font-size: 14px; }
+.code { font-family: ui-monospace, Menlo, Consolas, monospace; color: #ffd54f; letter-spacing: 4px; }
+
+.players {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.players li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #0f121a;
+  border-radius: 8px;
+}
+.players .tag { margin-left: auto; color: #8a93a6; font-size: 13px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MousseOver</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- PeerJS : connexion directe entre navigateurs (WebRTC), pas besoin de serveur à nous -->
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Deuxième onglet ouvert -->
+  <div id="screen-blocked" class="screen hidden">
+    <div class="card">
+      <h1>Mousse<span>Over</span></h1>
+      <p>Le jeu est déjà ouvert dans un autre onglet.</p>
+      <p class="hint">Ferme cet onglet et retourne sur l'autre pour jouer.</p>
+    </div>
+  </div>
+
+  <!-- Menu principal -->
+  <div id="screen-menu" class="screen hidden">
+    <div class="card">
+      <h1>Mousse<span>Over</span></h1>
+      <input id="input-name" maxlength="12" placeholder="Ton pseudo" autocomplete="off">
+      <button id="btn-create">Créer un salon</button>
+      <div class="row">
+        <input id="input-code" maxlength="4" placeholder="CODE" autocomplete="off">
+        <button id="btn-join">Rejoindre</button>
+      </div>
+      <button id="btn-solo" class="secondary">Tester seul</button>
+      <p id="menu-status" class="hint"></p>
+      <p id="menu-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Salon d'attente -->
+  <div id="screen-lobby" class="screen hidden">
+    <div class="card">
+      <h2>Salon <span id="lobby-code" class="code"></span></h2>
+      <p class="hint">Envoie ce code à tes amis (5 joueurs max)</p>
+      <button id="btn-copy" class="secondary">Copier le lien d'invitation</button>
+      <ul id="lobby-players" class="players"></ul>
+      <button id="btn-start">Lancer la partie</button>
+      <p id="lobby-wait" class="hint">En attente que l'hôte lance la partie…</p>
+      <button id="btn-leave" class="secondary">Quitter</button>
+    </div>
+  </div>
+
+  <!-- Fin de partie -->
+  <div id="screen-over" class="screen hidden">
+    <div class="card">
+      <h2 id="over-title"></h2>
+      <ul id="over-list" class="players"></ul>
+      <button id="btn-again">Rejouer</button>
+      <p id="over-wait" class="hint">En attente de l'hôte…</p>
+      <button id="btn-over-leave" class="secondary">Quitter</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
